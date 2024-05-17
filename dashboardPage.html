@@ -15,10 +15,10 @@
                 <a class="nav-link active" id="dashboard-tab" data-toggle="tab" href="#dashboard" role="tab" aria-controls="dashboard" aria-selected="true">Dashboard</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" id="city-tab" data-toggle="tab" href="#city" role="tab" aria-controls="city" aria-selected="false">City Reservoir Data</a>
+                <a class="nav-link" id="city-tab" data-toggle="tab" href="#city" role="tab" aria-controls="city" aria-selected="false">Area-wise Reservoir Data</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" id="area-tab" data-toggle="tab" href="#area" role="tab" aria-controls="area" aria-selected="false">Area-wise Reservoir Data</a>
+                <a class="nav-link" id="area-tab" data-toggle="tab" href="#area" role="tab" aria-controls="area" aria-selected="false">Building-wise Reservoir Data</a>
             </li>
         </ul>
         <div class="tab-content" id="myTabContent">
@@ -43,19 +43,19 @@
                     </thead>
                     <tbody>
                         <tr>
-                            <td>Area 1</td>
-                            <td>5000</td>
-                            <td>6000</td>
+                            <td>Marathahalli</td>
+                            <td>5000 L</td>
+                            <td>6000 L</td>
                         </tr>
                         <tr>
-                            <td>Area 2</td>
-                            <td>3000</td>
-                            <td>3500</td>
+                            <td>BTM layout</td>
+                            <td>3000 L</td>
+                            <td>3500 L</td>
                         </tr>
                         <tr>
-                            <td>Area 3</td>
-                            <td>4000</td>
-                            <td>4500</td>
+                            <td>Domlur</td>
+                            <td>4000 L</td>
+                            <td>4500 L</td>
                         </tr>
                     </tbody>
                 </table>
@@ -71,19 +71,19 @@
                     </thead>
                     <tbody>
                         <tr>
-                            <td>Building 1</td>
-                            <td>2000</td>
-                            <td>2500</td>
+                            <td>CNTC Presidential Tower: Touching the Sky</td>
+                            <td>2000 L</td>
+                            <td>2500 L</td>
                         </tr>
                         <tr>
-                            <td>Building 2</td>
-                            <td>1500</td>
-                            <td>1800</td>
+                            <td>Mantri DSK Pinnacle: Southern Comfort.</td>
+                            <td>1500 L</td>
+                            <td>1800 L</td>
                         </tr>
                         <tr>
-                            <td>Building 3</td>
-                            <td>1000</td>
-                            <td>1200</td>
+                            <td>SNN Clermont: Reaching New Heights.</td>
+                            <td>1000 L</td>
+                            <td>1200 L</td>
                         </tr>
                     </tbody>
                 </table>
@@ -100,9 +100,9 @@
         var pieChart1 = new Chart(ctx1, {
             type: 'pie',
             data: {
-                labels: ['Label 1', 'Label 2', 'Label 3'],
+                labels: ['Water level present', 'Water level Consumed'],
                 datasets: [{
-                    data: [10, 20, 30],
+                    data: [10000, 2000],
                     backgroundColor: ['#FF6384', '#36A2EB', '#FFCE56']
                 }]
             },
@@ -115,9 +115,9 @@
         var pieChart2 = new Chart(ctx2, {
             type: 'pie',
             data: {
-                labels: ['Label 1', 'Label 2', 'Label 3'],
+                labels: ['Water level present', 'Water level Consumed'],
                 datasets: [{
-                    data: [40, 50, 10],
+                    data: [4000, 2000],
                     backgroundColor: ['#FF6384', '#36A2EB', '#FFCE56']
                 }]
             },

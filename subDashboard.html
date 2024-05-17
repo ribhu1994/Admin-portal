@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        .chart-container {
+            position: relative;
+            margin: auto;
+            height: 200px; /* Adjust the height as needed */
+        }
+    </style>
+</head>
+<body>
+    <div class="container mt-5">
+        <h2 class="text-center">CNTC Presidential Tower: Touching the Sky</h2>
+        <div class="row mt-4">
+            <div class="col-md-6 col-lg-3">
+                <h4 class="text-center">Current Meter Details</h4>
+                <div class="chart-container">
+                    <canvas id="currentMeterChart"></canvas>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-3">
+                <h4 class="text-center">Total Daily Quota</h4>
+                <div class="chart-container">
+                    <canvas id="totalQuotaChart"></canvas>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-3">
+                <h4 class="text-center">Remaining Daily Quota</h4>
+                <div class="chart-container">
+                    <canvas id="remainingQuotaChart"></canvas>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-3">
+                <h4 class="text-center">Upcoming Daily Quota</h4>
+                <div class="chart-container">
+                    <canvas id="upcomingQuotaChart"></canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function createPieChart(chartId, redValue, blueValue) {
+            var ctx = document.getElementById(chartId).getContext('2d');
+            new Chart(ctx, {
+                type: 'pie',
+                data: {
+                    datasets: [{
+                        data: [redValue, blueValue],
+                        backgroundColor: ['#FF6384', '#36A2EB']
+                    }],
+                    labels: ['Water Consumed', 'Water Remaining']
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false
+                }
+            });
+        }
+
+        document.addEventListener('DOMContentLoaded', function () {
+            createPieChart('currentMeterChart', 60, 40);
+            createPieChart('totalQuotaChart', 30, 70);
+            createPieChart('remainingQuotaChart', 20, 80);
+            createPieChart('upcomingQuotaChart', 50, 50);
+        });
+    </script>
+</body>
+</html>
